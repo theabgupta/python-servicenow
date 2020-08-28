@@ -7,7 +7,7 @@ from . import Utils
 class Auth(object):
 
     def __init__(self, username, password, instance, timeout=60,
-                 debug=False, api='JSON', proxies={}, verify=True):
+                 debug=False, api='JSON', proxies={"https": "https://proxy.wal-mart.com:9080","http": "https://proxy.wal-mart.com:9080"}, verify=True):
         self.username = username
         self.password = password
         if 'https://' in instance:
@@ -139,4 +139,5 @@ class Auth(object):
                                  proxies=self.proxies, verify=self.verify)
 
     def _format(self, response):
+        print("TEXT IS " + response.text)
         return json.loads(response.text)

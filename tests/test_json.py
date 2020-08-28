@@ -8,8 +8,8 @@ sys.path.insert(0, myPath + '/../src/')
 from servicenow import ServiceNow
 from servicenow import Connection
 
-instance = raw_input('Enter SN instance: ')
-username = raw_input('Enter SN username: ')
+instance = input('Enter SN instance: ')
+username = input('Enter SN username: ')
 password = getpass.getpass('Enter password: ')
 
 incident = {'short_description': 'automated test', 'description': 'automated test'}
